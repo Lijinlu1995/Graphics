@@ -1,0 +1,213 @@
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.Group?>
+<FlowPane alignment="TOP_LEFT" hgap="10" prefHeight="400" prefWidth="800" vgap="10"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="sample.Controller">
+<children>
+    <VBox prefHeight="150" prefWidth="1000">
+        <children>
+            <MenuBar prefHeight="30" prefWidth="200">
+                <menus>
+                    <Menu id="file" fx:id="file" mnemonicParsing="false" text="File">
+                        <items>
+                            <MenuItem id="open" fx:id="open" mnemonicParsing="false" onAction="#setOpenFile"
+                                      text="Open"/>
+                            <MenuItem id="save" fx:id="save" mnemonicParsing="false" onAction="#setSaveFile"
+                                      text="Save"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <HBox prefHeight="100" prefWidth="600">
+                <children>
+                    <VBox prefHeight="100" prefWidth="600">
+                        <children>
+                            <HBox prefHeight="150" prefWidth="600" style="-fx-background-color: white;">
+                                <children>
+                                    <VBox id="pencil" fx:id="pencil" onMouseClicked="#setPencilDraw"
+                                          prefHeight="60" prefWidth="200">
+                                        <children>
+                                            <HBox alignment="CENTER" prefHeight="100" prefWidth="200">
+                                                <children>
+                                                    <ImageView fitHeight="60" fitWidth="70" pickOnBounds="true"
+                                                               preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@images/pencil.png"/>
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </HBox>
+                                            <HBox prefHeight="15" prefWidth="200">
+                                                <children>
+                                                    <Label alignment="CENTER" contentDisplay="CENTER"
+                                                           prefHeight="50" prefWidth="100" text="Pencil"/>
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </VBox>
+                                    <VBox id="line" fx:id="line" onMouseClicked="#setLineDraw" prefHeight="60"
+                                          prefWidth="200" style="-fx-border-color: #f2f2f2;">
+                                        <children>
+                                            <HBox alignment="CENTER" prefHeight="100" prefWidth="200">
+                                                <children>
+                                                    <ImageView fitHeight="60" fitWidth="70" pickOnBounds="true"
+                                                               preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@images/line.png"/>
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </HBox>
+                                            <HBox prefHeight="15" prefWidth="200">
+                                                <children>
+                                                    <Label alignment="CENTER" contentDisplay="CENTER"
+                                                           prefHeight="25" prefWidth="200" text="Line"/>
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </VBox>
+                                    <VBox id="rectangle" fx:id="rectangle" onMouseClicked="#setRectangleDraw"
+                                          prefHeight="60" prefWidth="200" style="-fx-border-color: #f2f2f2;">
+                                        <children>
+                                            <HBox alignment="CENTER" prefHeight="100" prefWidth="200">
+                                                <children>
+                                                    <ImageView fitHeight="60" fitWidth="70" pickOnBounds="true"
+                                                               preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@images/rectangle.png"/>
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </HBox>
+                                            <HBox prefHeight="15" prefWidth="200">
+                                                <children>
+                                                    <Label alignment="CENTER" contentDisplay="CENTER"
+                                                           prefHeight="25" prefWidth="200" text="Rectangle"/>
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </VBox>
+                                    <VBox id="cicle" fx:id="cicle" onMouseClicked="#setCicleDraw" prefHeight="60"
+                                          prefWidth="200" style="-fx-border-color: #f2f2f2;">
+                                        <children>
+                                            <HBox alignment="CENTER" prefHeight="100" prefWidth="200">
+                                                <children>
+                                                    <ImageView fitHeight="45" fitWidth="50" pickOnBounds="true"
+                                                               preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@images/circle.png"/>
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </HBox>
+                                            <HBox prefHeight="15" prefWidth="200">
+                                                <children>
+                                                    <Label alignment="CENTER" contentDisplay="CENTER"
+                                                           prefHeight="25" prefWidth="200" text="Circle"/>
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </VBox>
+                                    <VBox id="eraser" fx:id="eraser" onMouseClicked="#setEraserDraw"
+                                          prefHeight="60" prefWidth="200" style="-fx-border-color: #f2f2f2;">
+                                        <children>
+                                            <HBox alignment="CENTER" prefHeight="100" prefWidth="200">
+                                                <children>
+                                                    <ImageView fitHeight="60" fitWidth="70" pickOnBounds="true"
+                                                               preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@images/eraser.png"/>
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </HBox>
+                                            <HBox prefHeight="15" prefWidth="200">
+                                                <children>
+                                                    <Label alignment="CENTER" contentDisplay="CENTER"
+                                                           prefHeight="25" prefWidth="200" text="Eraser"/>
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </HBox>
+                        </children>
+                    </VBox>
+                    <VBox prefHeight="100" prefWidth="200">
+                        <children>
+                            <HBox id="colorHbox" prefHeight="175" prefWidth="250"
+                                  style="-fx-background-color: white;">
+                                <children>
+                                    <VBox id="pen_color" prefHeight="60" prefWidth="200"
+                                          style="-fx-border-color: #f2f2f2;">
+                                        <children>
+                                            <HBox alignment="CENTER" prefHeight="100" prefWidth="200">
+                                                <children>
+                                                    <ColorPicker id="penColorPicker" fx:id="penColorPicker"
+                                                                 onAction="#setPenColor" opacity="0.5"
+                                                                 pickOnBounds="false" prefHeight="50"
+                                                                 prefWidth="110"
+                                                                 style="-fx-background-color: #e6e6e6;"/>
+                                                </children>
+                                            </HBox>
+                                            <HBox prefHeight="15" prefWidth="200">
+                                                <children>
+                                                    <Label alignment="CENTER" contentDisplay="CENTER"
+                                                           prefHeight="25" prefWidth="200" text="PenColor"/>
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </VBox>
+                                    <VBox id="fill_color" prefHeight="60" prefWidth="200"
+                                          style="-fx-border-color: #f2f2f2;">
+                                        <children>
+                                            <HBox alignment="CENTER" prefHeight="100" prefWidth="45">
+                                                <children>
+                                                    <ColorPicker id="fillColorPicker" fx:id="fillColorPicker"
+                                                                 onAction="#setFillColor" opacity="0.5"
+                                                                 pickOnBounds="true" prefHeight="50"
+                                                                 prefWidth="100"
+                                                                 style="-fx-background-color: #e6e6e6;"/>
+                                                </children>
+                                            </HBox>
+                                            <HBox prefHeight="20" prefWidth="100">
+                                                <children>
+                                                    <Label alignment="CENTER" contentDisplay="CENTER"
+                                                           prefHeight="25" prefWidth="200" text="FillColor"/>
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </HBox>
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+    <AnchorPane fx:id="drawAnchorPane" onMouseDragReleased="#drawMouseDragReleased"
+                onMouseDragged="#drawMouseDragged" onMousePressed="#drawMousePressed" prefHeight="800"
+                prefWidth="1500" style="-fx-background-color: white">
+        <children>
+            <Group fx:id="drawGroup">
+                <children>
+
+                </children>
+            </Group>
+
+        </children>
+    </AnchorPane>
+
+</children>
+</FlowPane>
